@@ -1,0 +1,20 @@
+# Ensemble member 3: warm-started from member 2, tier-weighted sampling from mining round 1
+# (untiered bundles excluded). Ensemble uses runs/m3_hardmine_r1/checkpoint_best.pt.
+data_dir: data/processed
+output_dir: runs/m3_hardmine_r1
+init_checkpoint: runs/m2_warm_uniform/checkpoint_best.pt
+tier_file: runs/mining/tiers_r1.json
+tier_weights: [1.0, 2.0, 3.0, 0.0]
+sigma_min: 0.005
+sigma_max: 0.2
+sigma_sampling: shifted
+feature_aug_std: 0.01
+lr: 1.0e-4
+weight_decay: 1.0e-4
+max_grad_norm: 0.5
+epochs: 20
+samples_per_epoch: 2048
+val_samples_per_epoch: 128
+early_stop_patience: 5
+early_stop_min_delta: 2.0e-4
+seed: 42

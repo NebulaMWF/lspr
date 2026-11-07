@@ -1,0 +1,17 @@
+# Python >= 3.11. Install the CUDA build of torch that matches your driver, e.g.
+#   pip install torch==2.4.0 --index-url https://download.pytorch.org/whl/cu124
+torch==2.4.0
+numpy==2.4.1
+PyYAML==6.0.3
+tqdm==4.67.1
+
+# Preprocessing (scripts/preprocess.py)
+Pillow==12.0.0
+transformers==4.57.3   # DINOv3 support needs >= 4.56
+huggingface_hub==0.36.2
+safetensors==0.7.0     # only for --init worldmirror2
+opencv-python-headless==4.10.0.84   # only for scripts/prepare_rh20t.py (mp4 decoding)
+
+# --init worldmirror2 additionally needs HY-World-2.0 (module `hyworld2`):
+# clone https://github.com/Tencent-Hunyuan/HY-World-2.0, install its requirements,
+# and add the clone to PYTHONPATH.

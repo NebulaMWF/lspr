@@ -1,0 +1,17 @@
+# Ensemble member 1: trained from scratch with shifted (small-sigma-biased) sampling.
+# Ensemble uses runs/m1_scratch/checkpoint_last.pt.
+data_dir: data/processed
+output_dir: runs/m1_scratch
+sigma_min: 0.005
+sigma_max: 0.2
+sigma_sampling: shifted
+feature_aug_std: 0.03
+lr: 2.0e-4
+weight_decay: 1.0e-4
+max_grad_norm: 1.0
+epochs: 30
+samples_per_epoch: 2048
+val_samples_per_epoch: 128
+early_stop_patience: 6
+early_stop_min_delta: 5.0e-4
+seed: 42

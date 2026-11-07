@@ -1,0 +1,14 @@
+# Hard-sample mining round 1: tier all training bundles with the {m1, m2} ensemble.
+data_dir: data/processed
+subset: train
+checkpoints:
+  - runs/m1_scratch/checkpoint_last.pt
+  - runs/m2_warm_uniform/checkpoint_best.pt
+num_steps: 5
+sigma_min: 0.003
+sigma_max: 0.15
+gate_threshold: 0.40
+scale_calibration: true
+easy_threshold: 0.008
+hard_threshold: 0.015
+output: runs/mining/tiers_r1.json

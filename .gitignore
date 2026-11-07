@@ -1,0 +1,16 @@
+__pycache__/
+*.py[cod]
+*.egg-info/
+.ipynb_checkpoints/
+.vscode/
+.idea/
+
+# data, runs and weights (pretrained weights are downloaded into .cache/)
+.cache/
+data/
+runs/
+*.pt
+*.pth
+*.ckpt
+*.safetensors
+*.npz

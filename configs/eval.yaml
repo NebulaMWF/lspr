@@ -1,0 +1,15 @@
+# Paper main protocol: 4-member ensemble, K = 10 DDIM steps, sigma in [0.003, 0.25],
+# confidence gate off, no post-hoc scale calibration.
+data_dir: data/processed
+subset: test
+checkpoints:
+  - runs/m1_scratch/checkpoint_last.pt
+  - runs/m2_warm_uniform/checkpoint_best.pt
+  - runs/m3_hardmine_r1/checkpoint_best.pt
+  - runs/m4_hardmine_r2/checkpoint_last.pt
+num_steps: 10
+sigma_min: 0.003
+sigma_max: 0.25
+gate_threshold: 0.0
+scale_calibration: false
+output: runs/eval/test.json

@@ -1,0 +1,18 @@
+# Ensemble member 2: warm-started from member 1, uniform sigma down to 1 mm-scale noise.
+# Ensemble uses runs/m2_warm_uniform/checkpoint_best.pt.
+data_dir: data/processed
+output_dir: runs/m2_warm_uniform
+init_checkpoint: runs/m1_scratch/checkpoint_last.pt
+sigma_min: 0.001
+sigma_max: 0.2
+sigma_sampling: uniform
+feature_aug_std: 0.01
+lr: 1.0e-4
+weight_decay: 1.0e-4
+max_grad_norm: 0.5
+epochs: 20
+samples_per_epoch: 2048
+val_samples_per_epoch: 64
+early_stop_patience: 5
+early_stop_min_delta: 2.0e-4
+seed: 42
